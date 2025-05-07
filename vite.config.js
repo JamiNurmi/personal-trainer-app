@@ -8,8 +8,8 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   // Configure React plugin
-  base: '/personal-trainer-app/',
   plugins: [react()],
+  base: '/personal-trainer-app/',
 
   // Base URL path
   // In production, sets the base to GitHub Pages subpath
