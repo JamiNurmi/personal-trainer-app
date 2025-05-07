@@ -1,9 +1,9 @@
 {
+  "homepage": "https://yourusername.github.io/my-project",
   "name": "personal-trainer-app",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://DooMi42.github.io/personal-trainer-app/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
