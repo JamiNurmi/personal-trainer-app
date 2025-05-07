@@ -1,7 +1,7 @@
 {
-  "homepage": "https://jaminurmi.github.io/personal-trainer-app",
+  "homepage": "https://JamiNurmi.github.io/personal-trainer-app",
   "name": "personal-trainer-app",
-  "private": true,
+  "private": false,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
