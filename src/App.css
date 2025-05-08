@@ -1,4 +1,4 @@
-/* Base styles */
+/* Base styles - Reset and global styles */
 * {
     box-sizing: border-box;
 }
@@ -22,6 +22,7 @@ body {
     text-align: center;
 }
 
+/* Card styles */
 .card {
     padding: 2em;
 }
@@ -30,7 +31,7 @@ body {
     color: #888;
 }
 
-/* Navigation */
+/* Navigation styles */
 .navbar {
     background-color: #333;
     color: white;
@@ -102,7 +103,7 @@ tr:hover {
     background-color: #f9f9f9;
 }
 
-/* Sort indicators */
+/* Sort indicators for sortable table columns */
 .sort-indicator {
     margin-left: 5px;
 }
@@ -142,6 +143,7 @@ select {
     font-size: 1rem;
 }
 
+/* Button group styles */
 .button-group {
     display: flex;
     justify-content: flex-end;
@@ -157,6 +159,7 @@ button {
     font-size: 1rem;
 }
 
+/* Button variants */
 .btn-primary {
     background-color: #4caf50;
     color: white;
@@ -172,6 +175,7 @@ button {
     color: white;
 }
 
+/* Button hover states */
 .btn-primary:hover {
     background-color: #43a047;
 }
@@ -212,7 +216,7 @@ button {
     width: 90%;
 }
 
-/* Search box */
+/* Search box styles */
 .search-box {
     margin-bottom: 1rem;
     display: flex;
@@ -233,7 +237,7 @@ button {
     margin-top: 1rem;
 }
 
-/* Statistics */
+/* Statistics container styles */
 .stats-container {
     background-color: white;
     padding: 1.5rem;
@@ -242,7 +246,7 @@ button {
     margin-top: 1rem;
 }
 
-/* Responsive design */
+/* Responsive design styles */
 @media (max-width: 768px) {
     .navbar-container {
         flex-direction: column;

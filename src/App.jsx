@@ -11,10 +11,10 @@ import TrainingCalendar from './components/calendar/TrainingCalendar';
 import TrainingStats from './components/stats/TrainingStats';
 
 // Determine basename for GitHub Pages deployment
-// This ensures correct URL paths when deployed to a subdirectory
-const basename = process.env.NODE_ENV === 'production'
-  ? '/personal-trainer-app' // tämä pitää vastata tarkalleen repo-nimeä!
-  : '/';
+// Ensure correct URL paths when deployed to a subdirectory
+const basename = process.env.NODE_ENV === 'production' && window.location.hostname !== 'localhost'
+  ? '/personal-trainer-app' // Match the exact repo name for GitHub Pages
+  : '/personal-trainer-app'; // Use the same path for local development with Vite
 
 function App() {
   // Shared state for customers and trainings

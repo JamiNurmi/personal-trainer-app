@@ -1,3 +1,4 @@
+// Base URL for the API endpoints
 const BASE_URL = "https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api/";
 
 /**
@@ -70,6 +71,10 @@ export const generateId = () => {
     return Math.random().toString(36).substr(2, 9);
 };
 
+/**
+ * Resets the data on the server to its initial state.
+ * @returns {Promise<any>} - The response data after reset.
+ */
 export const resetData = async () => {
     try {
         const response = await fetch('https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/reset', {

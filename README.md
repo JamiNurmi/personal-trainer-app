@@ -1,10 +1,10 @@
-# 💪 Personal Trainer App 
+# Personal Trainer App 
 
 > Because tracking fitness progress on sticky notes is *so* 2005.
 
 A React application for personal trainers who are tired of Excel spreadsheets and want to manage their clients and sessions without pulling their hair out.
 
-## 🌟 Features
+## Features
 
 - **Customer Management** - Add, view, edit, and delete clients faster than they can say "one more rep"
 - **Training Sessions** - Schedule workouts that clients will probably reschedule anyway
@@ -12,7 +12,7 @@ A React application for personal trainers who are tired of Excel spreadsheets an
 - **Analytics** - Pretty charts to prove you're actually doing something with all that client data
 - **Export to CSV** - For when your boss still insists on seeing everything in Excel
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 

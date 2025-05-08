@@ -7,6 +7,7 @@ import dayjs from 'dayjs';
 import TrainingForm from './TrainingForm';
 
 const TrainingList = ({ customers }) => {
+    // State variables for managing trainings, search, sorting, and UI states
     const [trainings, setTrainings] = useState([]);
     const [search, setSearch] = useState('');
     const [sortField, setSortField] = useState('');
@@ -14,6 +15,7 @@ const TrainingList = ({ customers }) => {
     const [showAddForm, setShowAddForm] = useState(false);
     const [loading, setLoading] = useState(true);
 
+    // Fetch trainings from the API when the component mounts
     useEffect(() => {
         const fetchTrainings = async () => {
             try {
@@ -30,23 +32,27 @@ const TrainingList = ({ customers }) => {
         fetchTrainings();
     }, []);
 
+    // Helper function to get the customer's full name from a training object
     const getCustomerName = (training) => {
         return training.customer ? `${training.customer.firstname} ${training.customer.lastname}` : 'Unknown';
     };
 
+    // Handle changes in the search input
     const handleSearchChange = (e) => {
         setSearch(e.target.value);
     };
 
+    // Handle sorting logic when a column header is clicked
     const handleSort = (field) => {
         if (field === sortField) {
-            setSortAsc(!sortAsc);
+            setSortAsc(!sortAsc); // Toggle sort direction
         } else {
-            setSortField(field);
-            setSortAsc(true);
+            setSortField(field); // Set new sort field
+            setSortAsc(true); // Default to ascending order
         }
     };
 
+    // Filter trainings based on the search query
     const filteredTrainings = trainings.filter((training) => {
         const customerName = getCustomerName(training).toLowerCase();
         const activity = training.activity.toLowerCase();
@@ -54,6 +60,7 @@ const TrainingList = ({ customers }) => {
         return customerName.includes(query) || activity.includes(query);
     });
 
+    // Sort the filtered trainings based on the selected field and direction
     const sortedTrainings = [...filteredTrainings].sort((a, b) => {
         if (sortField === 'customer') {
             const aCustomer = getCustomerName(a).toLowerCase();
@@ -72,11 +79,13 @@ const TrainingList = ({ customers }) => {
         }
     });
 
+    // Add a new training to the list
     const handleAddTraining = (newTraining) => {
         setTrainings([...trainings, newTraining]);
-        setShowAddForm(false);
+        setShowAddForm(false); // Close the add form
     };
 
+    // Delete a training by its ID
     const handleDeleteTraining = async (id) => {
         if (window.confirm('Are you sure you want to delete this training session?')) {
             try {
@@ -90,6 +99,7 @@ const TrainingList = ({ customers }) => {
         }
     };
 
+    // Show a loading message while data is being fetched
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -97,6 +107,7 @@ const TrainingList = ({ customers }) => {
     return (
         <div>
             <h1>Training Sessions</h1>
+            {/* Search box and Add Training button */}
             <div className="search-box">
                 <input
                     type="text"
@@ -108,10 +119,12 @@ const TrainingList = ({ customers }) => {
                     Add Training
                 </button>
             </div>
+            {/* Table displaying the list of trainings */}
             <div className="table-container">
                 <table>
                     <thead>
                         <tr>
+                            {/* Column headers with sorting functionality */}
                             <th onClick={() => handleSort('date')}>
                                 Date
                                 {sortField === 'date' && (
@@ -140,6 +153,7 @@ const TrainingList = ({ customers }) => {
                         </tr>
                     </thead>
                     <tbody>
+                        {/* Render each training as a table row */}
                         {sortedTrainings.map((training, index) => (
                             <tr key={training.id || index /* Ensure a unique key */}>
                                 <td>{dayjs(training.date).format('DD.MM.YYYY HH:mm')}</td>
@@ -156,6 +170,7 @@ const TrainingList = ({ customers }) => {
                     </tbody>
                 </table>
             </div>
+            {/* Add Training Form Modal */}
             {showAddForm && (
                 <div className="modal-backdrop">
                     <div className="modal">
