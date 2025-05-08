@@ -13,8 +13,8 @@ import TrainingStats from './components/stats/TrainingStats';
 // Determine basename for GitHub Pages deployment
 // This ensures correct URL paths when deployed to a subdirectory
 const basename = process.env.NODE_ENV === 'production'
-  ? '/personalTrainerApp' // Production path - should match repo name
-  : '/'; // Local development path
+  ? '/personal-trainer-app' // tämä pitää vastata tarkalleen repo-nimeä!
+  : '/';
 
 function App() {
   // Shared state for customers and trainings
